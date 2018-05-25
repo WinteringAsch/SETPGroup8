@@ -11,10 +11,10 @@
     firebase.initializeApp(config);
 
     //Get elements
-    const txtEmail = document.getElementById('EmailSignUp');
-    const txtPassword = document.getElementById('passwordinput');
-    const btnLogin = document.getElementById('signin');
-    const btnSignUp = document.getElementById('confirmsignup');
+    const txtEmail = document.getElementById('txtEmail');
+    const txtPassword = document.getElementById('txtPassword');
+    const btnLogin = document.getElementById('btnLogin');
+    const btnSignUp = document.getElementById('btnSignUp');
     const btnLogout = document.getElementById('btnLogout');
 
     //Add login event
@@ -34,8 +34,6 @@
         const pass = txtPassword.value;
         const auth = firebase.auth();
 
-        console.log(email);
-        console.log(pass);
         //Sign in
         const promise = auth.createUserWithEmailAndPassword(email, pass);
 
@@ -43,10 +41,10 @@
             .catch(e => console.log(e.message));
     });
 
-    /*btnLogout.addEventListener('click', e => {
+    btnLogout.addEventListener('click', e => {
         firebase.auth().signOut();
 
-    });*/
+    });
 
 
     firebase.auth().onAuthStateChanged(firebaseUser => {
