@@ -2,9 +2,25 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title></title>
+    <title>Title</title>
+    <link rel="stylesheet" href="Content/bootstrap.css" />
+    <link rel="stylesheet" href="Content/StyleSheet1.css" />
 </head>
 <body>
+    <div class="container">
+        <div class="wrapper">
+            <form action="" method="post" name="Login_Form" class="form-signin">
+                <h3 class="form-signin-heading">Welcome Back! Please Sign In</h3>
+                <hr class="colorgraph"><br>
 
+                <input type="text" class="form-control" name="Username" placeholder="Username" required="" autofocus="" />
+                <input type="password" class="form-control" name="Password" placeholder="Password" required="" />
+
+                <button class="btn btn-lg btn-primary btn-block" name="Submit" value="Login" type="Submit">Login</button>
+            </form>
+        </div>
+    </div>
+    <script src="Scripts/jquery-3.3.1.js"></script>
+    <script src="Scripts/bootstrap.js"></script>
 </body>
 </html>
