@@ -15,6 +15,10 @@
     const btnLogout = document.getElementById('btnLogout');
     var provider = new firebase.auth.GoogleAuthProvider();
 
+
+    //database test
+    var database = firebase.database();
+
     //Add login event
     btnLogin.addEventListener('click', e => {
         firebase.auth().signInWithPopup(provider).then(function (result) {
@@ -23,7 +27,7 @@
             // The signed-in user info.
             var user = result.user;
             window.alert(user.email);
-            // ...
+     
         }).catch(function (error) {
             // Handle Errors here.
             var errorCode = error.code;
