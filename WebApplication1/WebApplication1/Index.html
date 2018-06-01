@@ -1,31 +1,119 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="ko">
+
 <head>
     <meta charset="utf-8">
-    <title>Coloride!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Portfolio Item - Start Bootstrap Template</title>
+
+    <!--Firebase -->
     <script src="https://www.gstatic.com/firebasejs/5.0.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.0.0/firebase.js"></script>
 
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="Content/portfolio-item.css" rel="stylesheet">
 </head>
+
 <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Start Bootstrap</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <button id="btnLogin"></button>
+            <button id="btnLogout"></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">
+                            Home
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Page Content -->
     <div class="container">
-        <input id="txtEmail" type="email" placeholder="Email">
-
-        <input id="txtPassword" type="password" placeholder="Password">
-
-        <button id="btnLogin" class="btn-Login">
-            log in
-        </button>
-
-        <button id="btnSignUp" class="btn-SignUp">
-            Sign Up
-        </button>
-
-        <button id="btnLogout" class="btn-Logout">
-            Log out
-         </button>
+        <!-- Portfolio Item Heading -->
+        <h1 class="my-4">
+            Page Heading
+            <small>Secondary Text</small>
+        </h1>
+        <!-- Portfolio Item Row -->
+        <div class="row">
+            <div class="col-md-8">
+                <img class="img-fluid" src="http://placehold.it/750x500" alt="">
+            </div>
+            <div class="col-md-4">
+                <h3 class="my-3">Project Description</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae. Sed dui lorem, adipiscing in adipiscing et, interdum nec metus. Mauris ultricies, justo eu convallis placerat, felis enim.</p>
+                <h3 class="my-3">Project Details</h3>
+                <ul>
+                    <li>Lorem Ipsum</li>
+                    <li>Dolor Sit Amet</li>
+                    <li>Consectetur</li>
+                    <li>Adipiscing Elit</li>
+                </ul>
+            </div>
+        </div>
+        <!-- /.row -->
+        <!-- Related Projects Row -->
+        <h3 class="my-4">Related Projects</h3>
+        <div class="row">
+            <div class="col-md-3 col-sm-6 mb-4">
+                <a href="#">
+                    <img class="img-fluid" src="http://placehold.it/500x300" alt="">
+                </a>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-4">
+                <a href="#">
+                    <img class="img-fluid" src="http://placehold.it/500x300" alt="">
+                </a>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-4">
+                <a href="#">
+                    <img class="img-fluid" src="http://placehold.it/500x300" alt="">
+                </a>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-4">
+                <a href="#">
+                    <img class="img-fluid" src="http://placehold.it/500x300" alt="">
+                </a>
+            </div>
+        </div>
+        <!-- /.row -->
     </div>
-
-    <script src="app_old.js"></script>
+    <!-- /.container -->
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; Your Website 2018</p>
+        </div>
+        <!-- /.container -->
+    </footer>
+    <!-- Bootstrap core JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js" integrity="sha384-u/bQvRA/1bobcXlcEYpsEdFVK/vJs3+T+nXLsBYJthmdBuavHvAW6UsmqO2Gd/F9" crossorigin="anonymous"></script>
+    <script src="GoogleLogin.js"></script>
 </body>
+
 </html>
