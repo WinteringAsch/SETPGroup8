@@ -1,0 +1,47 @@
+<html><head><style id="stndz-style"></style>
+    <title>Literally Canvas</title>
+    <link href="lib/css/colorpicker.css" rel="stylesheet">
+    <link href="lib/css/literally.css" rel="stylesheet">
+
+    <style type="text/css">
+      body {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        margin: 0;
+      }
+
+      .fs-container {
+        width: 768px;
+        height: 300px;
+        margin: auto;
+      }
+
+      .literally {
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="fs-container">
+      <div class="literally"><canvas width="768" height="267" style="background-color: rgb(230, 230, 230); height: 267px;"></canvas><div class="toolbar">  <div class="toolbar-row">    <div class="toolbar-row-left">      <div class="button color-square stroke-picker" style="background-color: rgba(0, 0, 0, 0.9);">&nbsp;</div>      <div class="tools button-group"><div class="button tool-pencil active"><img src="lib/img/pencil.png"></div><div class="button tool-rectangle"><img src="lib/img/rectangle.png"></div><div class="button tool-eraser"><img src="lib/img/eraser.png"></div><div class="button tool-pan"><img src="lib/img/pan.png"></div><div class="button tool-eye-dropper"><img src="lib/img/eyedropper.png"></div></div>      <div class="tool-options-container"><div class="tool-options tool-options-pencil" style=""><span class="brush-width-min">1 px</span>      <input type="range" min="1" max="50" step="1" value="5">      <span class="brush-width-max">50 px</span>      <span class="brush-width-val">(5 px)</span></div><div class="tool-options tool-options-rectangle" style="display: none;"></div><div class="tool-options tool-options-eraser" style="display: none;"><span class="brush-width-min">1 px</span>      <input type="range" min="1" max="50" step="1" value="10">      <span class="brush-width-max">50 px</span>      <span class="brush-width-val">(5 px)</span></div><div class="tool-options tool-options-pan" style="display: none;"></div><div class="tool-options tool-options-eye-dropper" style="display: none;"></div></div>    </div>    <div class="toolbar-row-right">      <div class="action-buttons">        <div class="button clear-button danger">Clear</div>        <div class="button-group">          <div class="button btn-warning undo-button">¡ç</div><div class="button btn-warning redo-button">¡æ</div>        </div>        <div class="button-group">          <div class="button btn-inverse zoom-out-button">?</div><div class="button btn-inverse zoom-in-button">+</div>        </div>        <div class="zoom-display">1</div>      </div>    </div>    <div class="clearfix"></div>  </div></div></div>
+    </div>
+
+    <script src="lib/js/literallycanvas.fat.js"></script>
+
+    <script type="text/javascript">
+      $(document).ready(function() {
+        // disable scrolling on touch devices so we can actually draw
+        $(document).bind('touchmove', function(e) {
+          if (e.target === document.documentElement) {
+            return e.preventDefault();
+          }
+        });
+
+        // the only LC-specific thing we have to do
+        $('.literally').literallycanvas();
+      });
+    </script><p><a href="https://www.jqueryscript.net/"><strong>Free jQuery Plugins, HTML5 and CSS3 Scripts</strong></a> - Providing tons of <em>Jquery Plugins</em>,<em>Html5 and CSS3 Scripts</em> for web developers to preview and download. By using these resources, you can create amazing effects with fancy animations of content elements like text, images and so on.</p>
+  
+
+<div class="colorpicker" style="display: none;"><div class="colorpicker-saturation" style="background-color: rgb(255, 0, 0);"><i style="left: 0px; top: 200px;"><b></b></i></div><div class="colorpicker-hue"><i style="top: 0px;"></i></div><div class="colorpicker-alpha"><i style="top: 0px;"></i></div><div class="colorpicker-color"><div style="background-color: rgb(0, 0, 0);"></div></div></div></body></html>
