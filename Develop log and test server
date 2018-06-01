@@ -1,0 +1,23 @@
+2018-6-2 server update to https
+--------
+FTP:  ftp://skku.club/
+USER:skku_club
+PW:skku_club
+it is linux and nginx is already set up.
+
+you can upload to this server and test everything 
+already download everything from github
+
+admin:https://skku.club:8888
+USER:skku.club
+PW:skku.club
+
+
+https://skku.club/index.html
+
+when you are test or change js file you should disable cache in chrome(F12-NETWORK-DISABLE CACHE)
+
+i am still study js.
+it's  much hard than I think.
+I am trying to solve the draw panel and trans it to database.(still in read others code and try to unserstand it)
+somewhere said in html5 all function is already existed.also js...
