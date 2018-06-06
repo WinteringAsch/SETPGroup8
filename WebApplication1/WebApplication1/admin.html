@@ -28,9 +28,11 @@
     </script>
     <!-- Bootstrap core CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
 
     <!-- Custom styles for this template -->
     <link href="Content/portfolio-item.css" rel="stylesheet">
+    <link href="Content/admin.css" rel="stylesheet" />
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
@@ -41,40 +43,10 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
-                    <li>
-                        <textarea id="emailbox" rows="2" cols="30">not logged in</textarea>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">
-                            Home
-                            <span class="sr-only">(current)</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <!-- <a class="nav-link" href="#" onclick="Services_click();">Services</a>
-                        -->
-                        <!--Services부분을 부트스트랩의 dropdown링크로 바꿧습니다. 이 버튼을 클릭하면 public project, private project를 선택하게 창이 나옵니다-->
-                        <div class="dropdown show">
-                            <a class="nav-link" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Services
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                <a class="dropdown-item" href="#">함께 색칠하기</a>
-                                <a class="dropdown-item" href="#">혼자 색칠하기</a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
-                    </li>
-                    <li class="nav-item" id="btnLogin" onclick="Login_click();">
-                        <a class="nav-link" href="#">Google Login</a>
-                    </li>
                     <li class="nav-item" id="btnLogout" onclick="Logout_click();">
-                        <a class="nav-link" href="#">Logout</a>"
+                        <a class="nav-link" href="#">
+                            <i class="fa d-inline fa-lg fa-user-circle-o"></i>Logout
+                        </a>
                     </li>
                 </ul>
             </div>
@@ -86,7 +58,7 @@
                 <div class="col-md-12">
                     <div class="row">
                         <div class="col-md-6">
-                            <h2><img class="cus-icon" src=""> 회원리스트</h2>
+                            <h2><img class="cus-icon" src="Images/member_icon.jpg"> 회원리스트</h2>
                             <div class="cus-div">
                                 <table class="table">
                                     <tbody>
@@ -94,7 +66,6 @@
                                     <th>NO</th>
                                     <th>이름</th>
                                     <th>아이디</th>
-                                    <th>예매횟수</th>
                                     </thead>
                                     </tbody>
                                 </table>
@@ -102,8 +73,8 @@
                         </div>
                         <div class="col-md-6">
                             <h2>
-                                <img class="cus-icon" src=""> 프로젝트리스트
-                                <input type="button" class="btn navbar-btn ml-2 text-white btn-secondary cus-btn" value="추가" data-toggle="modal" data-target="#addMovie" />
+                                <img class="cus-icon" src="Images/drawing.png"> 프로젝트리스트
+                                <input type="button" class="btn navbar-btn ml-2 text-white btn-secondary cus-btn" value="추가" data-toggle="modal" data-target="#addProject" />
                             </h2>
                             <div class="cus-div">
                                 <table class="table">
@@ -125,15 +96,15 @@
     </div>
 
 
-    <!-- 영화 추가 Modal -->
-    <div class="modal fade" id="addMovie" role="dialog">
+    <!-- 프로젝트 추가 Modal -->
+    <div class="modal fade" id="addProject" role="dialog">
         <div class="modal-dialog">
 
             <!-- Modal content-->
-            <form method="post" action="./php/upload.php" enctype="multipart/form-data">
+            <form method="post" action="" enctype="multipart/form-data">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h4 class="modal-title">영화추가</h4>
+                        <h4 class="modal-title">프로젝트추가</h4>
                     </div>
                     <div class="modal-body">
 
@@ -151,11 +122,7 @@
                                 <td class="modal-td2"><input type="date" class="modal-input" id="end_date" /></td>
                             </tr>
                             <tr>
-                                <td class="modal-td1">방영시간</td>
-                                <td class="modal-td2"><input type="text" class="modal-input" id="start_time" placeholder="ex)09:00, 11:00, 13:00" /></td>
-                            </tr>
-                            <tr>
-                                <td class="modal-td1">포스터</td>
+                                <td class="modal-td1">도안</td>
                                 <td class="modal-td2"><input type="file" name="fileToUpload" id="fileToUpload"></td>
                             </tr>
                         </table>
@@ -170,60 +137,9 @@
         </div>
     </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
-
-    <script>
-        $(document).ready(function () {
-
-            //아이디 중복확인
-            $('.add-btn').click(function () {
-                var fileValue = $("#fileToUpload").val().split("\\");
-                var fileName = fileValue[fileValue.length - 1]; // 파일명
-
-                $.ajax({
-                    type: "POST",
-                    data: {
-                        'title': $('#title').val(),
-                        'start_date': $('#start_date').val(),
-                        'end_date': $('#end_date').val(),
-                        'start_time': $('#start_time').val(),
-                        'fileToUpload': fileName
-                    },
-                    url: "./php/add_movie.php",
-                    success: function (data) {
-                        console.log(data);
-                    }, error: function (data) {
-                        console.log(data);
-                    }
-                });
-            });
-
-            $('.movie-del-btn').click(function () {
-                var del_movie_info = $(this).val();
-                var del_infoArr = del_movie_info.split('/');
-                console.log(del_infoArr);
-
-                $.ajax({
-                    type: "POST",
-                    data: {
-                        'start_time': del_infoArr[0],
-                        'title': del_infoArr[1]
-                    },
-                    url: "./php/delete_movie.php",
-                    success: function (data) {
-                        console.log(data);
-                        alert('삭제되었습니다.');
-                        location.reload();
-                    }, error: function (data) {
-                        console.log(data);
-                    }
-                });
-            });
-
-        });
-    </script>
+    <!-- Bootstrap core JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js" integrity="sha384-u/bQvRA/1bobcXlcEYpsEdFVK/vJs3+T+nXLsBYJthmdBuavHvAW6UsmqO2Gd/F9" crossorigin="anonymous"></script>
 
 
 </body>
