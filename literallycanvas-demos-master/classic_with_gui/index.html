@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html>
   <head>
     <title>Literally Canvas</title>
@@ -8,7 +8,7 @@
 
     <style type="text/css">
       .fs-container {
-        width: 320px;
+        width: auto;
         margin: auto;
       }
 
@@ -22,7 +22,8 @@
 
   <body>
     <div class="fs-container">
-      <div id="lc"></div>
+      <div id="lc">
+      </div>
     </div>
 
     <!-- you really ought to include react-dom, but for react 0.14 you don't strictly have to. -->
@@ -30,12 +31,15 @@
     <script src="../_js_libs/literallycanvas.js"></script>
 
     <script type="text/javascript">
-      var lc = LC.init(document.getElementById("lc"), {
-        imageURLPrefix: '../_assets/lc-images',
-        toolbarPosition: 'bottom',
-        defaultStrokeWidth: 2,
-        strokeWidths: [1, 2, 3, 5, 30]
-      });
+        var lc = LC.init(document.getElementById("lc"), {
+            imageURLPrefix: '../_assets/lc-images',
+            toolbarPosition: 'bottom',
+            defaultStrokeWidth: 2,
+            strokeWidths: [1, 2, 3, 20, 30]
+        });
+        var newImage = new Image()
+        newImage.src = 'pp1.png'; // Modify this part to change file
+        lc.saveShape(LC.createShape('Image', { x: 10, y: 10, image: newImage }));
     </script>
   </body>
 </html>
