@@ -13,7 +13,19 @@
     <script src="https://www.gstatic.com/firebasejs/5.0.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.0.0/firebase-database.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.0.0/firebase-firestore.js"></script>
-
+    <script src="https://www.gstatic.com/firebasejs/5.0.0/firebase-messaging.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyCXArk4doKAhkI2nTJ5mvJq--6Oak1Pbk0",
+            authDomain: "coloride1.firebaseapp.com",
+            databaseURL: "https://coloride1.firebaseio.com",
+            projectId: "coloride1",
+            storageBucket: "coloride1.appspot.com",
+            messagingSenderId: "380923923080"
+        };
+        firebase.initializeApp(config);
+    </script>
     <!-- Bootstrap core CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 
@@ -25,14 +37,15 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#">Start Bootstrap</a>
+            <a class="navbar-brand" href="#">Coloride</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <button id="btnLogin"></button>
-            <button id="btnLogout"></button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
+                    <li>
+                        <textarea id="emailbox" rows="2" cols="30">not logged in</textarea>
+                    </li>
                     <li class="nav-item active">
                         <a class="nav-link" href="#">
                             Home
@@ -43,10 +56,27 @@
                         <a class="nav-link" href="#">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Services</a>
+                        <!-- <a class="nav-link" href="#" onclick="Services_click();">Services</a>
+                       -->
+                        <!--Services부분을 부트스트랩의 dropdown링크로 바꿧습니다. 이 버튼을 클릭하면 public project, private project를 선택하게 창이 나옵니다-->
+                        <div class="dropdown show">
+                            <a class="nav-link" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Services
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <a class="dropdown-item" href="#">함께 색칠하기</a>
+                                <a class="dropdown-item" href="#">혼자 색칠하기</a>
+                            </div>
+                        </div>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Contact</a>
+                    </li>
+                    <li class="nav-item" id="btnLogin" onclick="Login_click();">
+                        <a class="nav-link" href="#">Google Login</a>
+                    </li>
+                    <li class="nav-item" id="btnLogout" onclick="Logout_click();">
+                        <a class="nav-link" href="#">Logout</a>"
                     </li>
                 </ul>
             </div>
@@ -56,13 +86,13 @@
     <div class="container">
         <!-- Portfolio Item Heading -->
         <h1 class="my-4">
-            Page Heading
-            <small>Secondary Text</small>
+            Enjoy your color!
+            <small>welcome</small>
         </h1>
         <!-- Portfolio Item Row -->
         <div class="row">
             <div class="col-md-8">
-                <img class="img-fluid" src="http://placehold.it/750x500" alt="">
+                <iframe width=750 height=500 name=aa frameborder=0 src=https://skku.club/Simple-Drawing-App-with-Bucket-Tool-master/drawing-app-with-bucket.html></iframe>
             </div>
             <div class="col-md-4">
                 <h3 class="my-3">Project Description</h3>
@@ -111,10 +141,13 @@
         </div>
         <!-- /.container -->
     </footer>
+
     <!-- Bootstrap core JavaScript -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js" integrity="sha384-u/bQvRA/1bobcXlcEYpsEdFVK/vJs3+T+nXLsBYJthmdBuavHvAW6UsmqO2Gd/F9" crossorigin="anonymous"></script>
     <script src="GoogleLogin.js"></script>
+    <script src="DBHandler.js"></script>
+    <script src="app.js"></script>
 </body>
 
 </html>
