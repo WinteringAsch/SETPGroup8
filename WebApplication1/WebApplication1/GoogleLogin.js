@@ -10,10 +10,11 @@ function Login_click() {
         var token = result.credential.accessToken;
         // The signed-in user info.
         user = result.user;
-        $("#emailbox").val(user.email + " 환영합니다");
+        $("#emailbox").html(user.email + " 환영합니다");
         InitUserDB(); //유저디비
         // ...
     }).catch(function (error) {
+        window.alert("Login failed");
         // Handle Errors here.
         var errorCode = error.code;
         var errorMessage = error.message;
@@ -29,7 +30,7 @@ function Logout_click() {
     firebase.auth().signOut().then(function () {
         // Sign-out successful.
         window.alert("Log out success");
-        $("#emailbox").val("not logged in");
+        $("#emailbox").html("");
     }).catch(function (error) {
         // An error happened.
         window.alert("Log out failed");

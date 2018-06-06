@@ -61,7 +61,7 @@
                             <h2><img class="cus-icon" src="Images/member_icon.jpg"> 회원리스트</h2>
                             <div class="cus-div">
                                 <table class="table">
-                                    <tbody>
+                                    <tbody id="userList">
                                     <thead>
                                     <th>NO</th>
                                     <th>이름</th>
@@ -140,7 +140,7 @@
     <!-- Bootstrap core JavaScript -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js" integrity="sha384-u/bQvRA/1bobcXlcEYpsEdFVK/vJs3+T+nXLsBYJthmdBuavHvAW6UsmqO2Gd/F9" crossorigin="anonymous"></script>
-
-
+    <script src="DBHandler.js"></script>
+    <script>getUser();</script>
 </body>
 </html>
