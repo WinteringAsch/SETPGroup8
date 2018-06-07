@@ -78,12 +78,11 @@
                             </h2>
                             <div class="cus-div">
                                 <table class="table">
-                                    <tbody>
+                                    <tbody id="projectList">
                                     <thead>
                                     <th>PID</th>
                                     <th>제목</th>
                                     <th>작업기간</th>
-                                    <th>삭제</th>
                                     </thead>
                                     </tbody>
                                 </table>
@@ -97,7 +96,7 @@
 
 
     <!-- 프로젝트 추가 Modal -->
-    <div class="modal fade" id="addProject" role="dialog">
+    <div class="modal fade" role="dialog">
         <div class="modal-dialog">
 
             <!-- Modal content-->
@@ -111,25 +110,25 @@
                         <table border="1">
                             <tr>
                                 <td class="modal-td1">제목</td>
-                                <td class="modal-td2"><input type="text" class="modal-input" id="title" /></td>
+                                <td class="modal-td2"><input type="text" class="modal-input" id="projectAdd_title" /></td>
                             </tr>
                             <tr>
                                 <td class="modal-td1">시작날짜</td>
-                                <td class="modal-td2"><input type="date" class="modal-input" id="start_date" /></td>
+                                <td class="modal-td2"><input type="date" class="modal-input" id="projectAdd_start_date" /></td>
                             </tr>
                             <tr>
                                 <td class="modal-td1">종료날짜</td>
-                                <td class="modal-td2"><input type="date" class="modal-input" id="end_date" /></td>
+                                <td class="modal-td2"><input type="date" class="modal-input" id="projectAdd_end_date" /></td>
                             </tr>
                             <tr>
                                 <td class="modal-td1">도안</td>
-                                <td class="modal-td2"><input type="file" name="fileToUpload" id="fileToUpload"></td>
+                                <td class="modal-td2"><input type="file" name="fileToUpload" id="projectAdd_fileToUpload"></td>
                             </tr>
                         </table>
 
                     </div>
                     <div class="modal-footer">
-                        <input type="submit" class="btn navbar-btn ml-2 text-white btn-secondary cus-btn add-btn" value="추가" name="submit">
+                        <button type="button" class="btn btn-default" onclick="projectAdd();">추가</button>
                         <button type="button" class="btn btn-default" data-dismiss="modal">취소</button>
                     </div>
                 </div>
@@ -142,5 +141,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js" integrity="sha384-u/bQvRA/1bobcXlcEYpsEdFVK/vJs3+T+nXLsBYJthmdBuavHvAW6UsmqO2Gd/F9" crossorigin="anonymous"></script>
     <script src="DBHandler.js"></script>
     <script>getUser();</script>
+    <script>getProject();</script>
+
 </body>
 </html>
