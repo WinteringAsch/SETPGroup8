@@ -26,3 +26,36 @@ function getUser() {
         });
     });
 }
+
+function getProject() {
+    $("#projectList").html("");
+
+    firebase.database().ref('/publicProject/').once('value', function (snapshot) {
+        var num = 1;
+        snapshot.forEach(function (childSnapshot) {
+            var title = childSnapshot.child('title').val();
+            var start_date = childSnapshot.child('startDate').val();
+            var end_date = childSnapshot.child('endDate').val();
+            var tag = "<tr><td>" + num + "</td><td>" + title + "</td><td>" + start_date + " ~ " + end_date + "</td></tr>"
+            $("#projectList").append(tag);
+            num++;
+        });
+
+    });
+
+}
+
+function projectAdd() {
+    var projectTitle = $("#projectAdd_title").val();
+    var project_start_date = $("#projectAdd_start_date").val();
+    var project_end_date = $("#projectAdd_end_date").val();
+    //var projectTitle = document.getElementById("projectAdd_title");
+
+    var newProjectRef = firebase.database().ref('publicProject').push();
+    newProjectRef.set({
+        title: projectTitle,
+        startDate: project_start_date,
+        endDate: project_end_date
+    });
+    window.alert("추가가 완료되었습니다");
+}
