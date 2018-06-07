@@ -1,0 +1,12 @@
+html, body {height: 100%;}
+.w-100 {width: 75% !important;}
+.cus-container {border:1px solid blue;}
+.cus-icon {width:10%;}
+.cus-div {height:100%;}
+.cus-btn {float:right; font-size:15px; cursor:pointer;}
+.modal-backdrop {background-color: #000 !important; opacity: 0.7 !important;}
+.modal-td1{width:40%; padding:10px;}
+.modal-td2{width:60%; padding:10px;}
+.modal-input{width:100%;}
+.modal-dialog {margin: 10% auto !important;}
+.modal-header{background-color: #003c7d; color: white;}

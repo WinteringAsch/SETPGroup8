@@ -1,0 +1,146 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Portfolio Item - Start Bootstrap Template</title>
+
+    <!--Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/5.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.0.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.0.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.0.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.0.0/firebase-messaging.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyCXArk4doKAhkI2nTJ5mvJq--6Oak1Pbk0",
+            authDomain: "coloride1.firebaseapp.com",
+            databaseURL: "https://coloride1.firebaseio.com",
+            projectId: "coloride1",
+            storageBucket: "coloride1.appspot.com",
+            messagingSenderId: "380923923080"
+        };
+        firebase.initializeApp(config);
+    </script>
+    <!-- Bootstrap core CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+
+    <!-- Custom styles for this template -->
+    <link href="Content/portfolio-item.css" rel="stylesheet">
+    <link href="Content/admin.css" rel="stylesheet" />
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Coloride</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item" id="btnLogout" onclick="Logout_click();">
+                        <a class="nav-link" href="#">
+                            <i class="fa d-inline fa-lg fa-user-circle-o"></i>Logout
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h2><img class="cus-icon" src="Images/member_icon.jpg"> 회원리스트</h2>
+                            <div class="cus-div">
+                                <table class="table">
+                                    <tbody id="userList">
+                                    <thead>
+                                    <th>NO</th>
+                                    <th>이름</th>
+                                    <th>아이디</th>
+                                    </thead>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <h2>
+                                <img class="cus-icon" src="Images/drawing.png"> 프로젝트리스트
+                                <input type="button" class="btn navbar-btn ml-2 text-white btn-secondary cus-btn" value="추가" data-toggle="modal" data-target="#addProject" />
+                            </h2>
+                            <div class="cus-div">
+                                <table class="table">
+                                    <tbody>
+                                    <thead>
+                                    <th>PID</th>
+                                    <th>제목</th>
+                                    <th>작업기간</th>
+                                    <th>삭제</th>
+                                    </thead>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 프로젝트 추가 Modal -->
+    <div class="modal fade" id="addProject" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <form method="post" action="" enctype="multipart/form-data">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">프로젝트추가</h4>
+                    </div>
+                    <div class="modal-body">
+
+                        <table border="1">
+                            <tr>
+                                <td class="modal-td1">제목</td>
+                                <td class="modal-td2"><input type="text" class="modal-input" id="title" /></td>
+                            </tr>
+                            <tr>
+                                <td class="modal-td1">시작날짜</td>
+                                <td class="modal-td2"><input type="date" class="modal-input" id="start_date" /></td>
+                            </tr>
+                            <tr>
+                                <td class="modal-td1">종료날짜</td>
+                                <td class="modal-td2"><input type="date" class="modal-input" id="end_date" /></td>
+                            </tr>
+                            <tr>
+                                <td class="modal-td1">도안</td>
+                                <td class="modal-td2"><input type="file" name="fileToUpload" id="fileToUpload"></td>
+                            </tr>
+                        </table>
+
+                    </div>
+                    <div class="modal-footer">
+                        <input type="submit" class="btn navbar-btn ml-2 text-white btn-secondary cus-btn add-btn" value="추가" name="submit">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">취소</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js" integrity="sha384-u/bQvRA/1bobcXlcEYpsEdFVK/vJs3+T+nXLsBYJthmdBuavHvAW6UsmqO2Gd/F9" crossorigin="anonymous"></script>
+    <script src="DBHandler.js"></script>
+    <script>getUser();</script>
+</body>
+</html>

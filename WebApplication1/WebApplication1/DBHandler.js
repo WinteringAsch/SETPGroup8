@@ -11,3 +11,18 @@ function InitUserDB() {
         }
     });
 }
+
+function getUser() {
+    $("#userList").html("");
+   
+    firebase.database().ref('/users/').once('value', function (snapshot) {
+        var num = 1;
+        snapshot.forEach(function (childSnapshot) {
+            var name = childSnapshot.key;
+            var id = childSnapshot.child("userID").val();
+            var tag = "<tr><td>" + num + "</td><td>" + name + "</td><td>" + id + "</td><tr>";
+            $("#userList").append(tag);
+            num++;
+        });
+    });
+}
