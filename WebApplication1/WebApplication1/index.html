@@ -21,13 +21,21 @@
                 defaultStrokeWidth: 2,
                 strokeWidths: [1, 2, 3, 20, 30]
             });
-            $('.controls.export [data-action=export-as-png]').click(function (e) {
-                e.preventDefault();
-                window.open(lc.getImage().toDataURL());
-            });
             var newImage = new Image()
             newImage.src = "https://firebasestorage.googleapis.com/v0/b/coloride1.appspot.com/o/pp1.png?alt=media&token=f130971e-5725-4563-b996-25f4e0974560"; // Modify this part to change file
             lc.saveShape(LC.createShape('Image', { x: 10, y: 10, image: newImage }));
+            var localStorageKey = 'drawing'
+            if (localStorage.getItem(localStorageKey)) {
+                lc.loadSnapshot(JSON.parse(localStorage.getItem(localStorageKey)));
+            }
+            lc.on('drawingChange', function () {
+                localStorage.setItem(localStorageKey, JSON.stringify(lc.getSnapshot()));
+            });
+            $('.controls.export [data-action=export-as-JSON]').click(function (e) {
+                e.preventDefault();
+                alert(JSON.stringify(lc.getSnapshot()));
+            });
+
         });
     </script>
     <style type="text/css">
@@ -144,7 +152,7 @@
                     <div id="lc">
                     </div>
                     <form class="controls export">
-                        <input type="submit" data-action="export-as-png" value="Export as PNG">
+                        <input type="submit" data-action="export-as-JSON" value="Export as JSON">
                 </div>
 
             </div>
