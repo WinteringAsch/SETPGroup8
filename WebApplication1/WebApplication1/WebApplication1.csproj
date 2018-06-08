@@ -71,7 +71,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="admin.html" />
-    <Content Include="app.js" />
+    <Content Include="drawing.js" />
     <Content Include="Content\admin.css" />
     <Content Include="Content\portfolio-item.css" />
     <Content Include="Content\thumbnail-gallery.css" />
