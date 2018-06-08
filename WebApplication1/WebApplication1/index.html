@@ -12,6 +12,7 @@
     <link href="LC/_assets/literallycanvas.css" rel="stylesheet">
     <script src="LC/_js_libs/react-0.14.3.js"></script>
     <script src="LC/_js_libs/literallycanvas.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
             var lc = LC.init(document.getElementById("lc"), {
@@ -23,6 +24,7 @@
             var newImage = new Image()
             newImage.src = "https://firebasestorage.googleapis.com/v0/b/coloride1.appspot.com/o/pp1.png?alt=media&token=f130971e-5725-4563-b996-25f4e0974560"; // Modify this part to change file
             lc.saveShape(LC.createShape('Image', { x: 10, y: 10, image: newImage }));
+            /* 실시간 로컬 저장, 하지만 서버에서 불러오는 기능과 충돌 가능성때문에 주석처리
             var localStorageKey = 'drawing'
             if (localStorage.getItem(localStorageKey)) {
                 lc.loadSnapshot(JSON.parse(localStorage.getItem(localStorageKey)));
@@ -30,9 +32,16 @@
             lc.on('drawingChange', function () {
                 localStorage.setItem(localStorageKey, JSON.stringify(lc.getSnapshot()));
             });
+            */
+            var JSONstring;
             $('.controls.export [data-action=export-as-JSON]').click(function (e) {
                 e.preventDefault();
+                JSONstring = JSON.stringify(lc.getSnapshot());
                 alert(JSON.stringify(lc.getSnapshot()));
+            });
+            $('.controls.export [data-action=import-as-JSON]').click(function (e) {
+                e.preventDefault();
+                lc.loadSnapshot(JSON.parse(JSONstring));
             });
         });
     </script>
@@ -151,6 +160,8 @@
                     </div>
                     <form class="controls export">
                         <input type="submit" data-action="export-as-JSON" value="Export as JSON">
+                        <form class="controls import">
+                            <input type="submit" data-action="import-as-JSON" value="Import as JSON">
                 </div>
 
             </div>
@@ -210,5 +221,4 @@
     <script src="app.js"></script>
 
 </body>
-
 </html>
