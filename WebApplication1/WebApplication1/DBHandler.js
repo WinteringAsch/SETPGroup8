@@ -62,7 +62,7 @@ function projectAdd() {
     window.alert("추가가 완료되었습니다");
 }
 
-function hi() {
+function showRelatedProject() {
     var storageRef = firebase.storage().ref();
     storageRef.child("pp1.png").getDownloadURL().then(function (url) {
         $("#related1").attr('src', url);
