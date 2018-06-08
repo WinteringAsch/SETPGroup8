@@ -1,4 +1,5 @@
 ﻿//DB를 컨트롤하는 함수들을 모아놓을 예정입니다
+
 function InitUserDB() {
     email = user.email;
     var id = email.split('@');
@@ -60,6 +61,19 @@ function projectAdd() {
     });
     window.alert("추가가 완료되었습니다");
 }
-function getRelatedProject() {
-    var asd = 1;
+
+function hi() {
+    var storageRef = firebase.storage().ref();
+    storageRef.child("pp1.png").getDownloadURL().then(function (url) {
+        $("#related1").attr('src', url);
+    });
+    storageRef.child("pp2.png").getDownloadURL().then(function (url) {
+        $("#related2").attr('src', url);
+    });
+    storageRef.child("pp3.png").getDownloadURL().then(function (url) {
+        $("#related3").attr('src', url);
+    });
+    storageRef.child("pp4.png").getDownloadURL().then(function (url) {
+        $("#related4").attr('src', url);
+    });
 }
