@@ -25,8 +25,10 @@
         <div id="lc">
         </div>
         <form class="controls export">
-            <input type="submit" data-action="export-as-png" value="Export as PNG">
-    </div>
+            <input type="submit" data-action="export-as-JSON" value="Export as JSON">
+            <form class="controls export">
+                <input type="submit" data-action="import-as-JSON" value="Import as JSON">
+</div>
 
     <!-- you really ought to include react-dom, but for react 0.14 you don't strictly have to. -->
     <script src="../_js_libs/react-0.14.3.js"></script>
@@ -41,13 +43,20 @@
                 defaultStrokeWidth: 2,
                 strokeWidths: [1, 2, 3, 20, 30]
             });
-
+            
             var newImage = new Image()
             newImage.src = 'pp1.png'; // Modify this part to change file
             lc.saveShape(LC.createShape('Image', { x: 10, y: 10, image: newImage }));
-            $('.controls.export [data-action=export-as-png]').click(function (e) {
+            
+            var s;
+            $('.controls.export [data-action=export-as-JSON]').click(function (e) {
                 e.preventDefault();
-                window.open(lc.getImage().toDataURL());
+                s = JSON.stringify(lc.getSnapshot());
+                alert(s);
+            });
+            $('.controls.export [data-action=import-as-JSON]').click(function (e) {
+                e.preventDefault();
+                lc.loadSnapshot(JSON.parse(s));
             });
         });
     </script>
