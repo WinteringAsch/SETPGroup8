@@ -77,3 +77,23 @@ function showRelatedProject() {
         $("#related4").attr('src', url);
     });
 }
+
+function chat() {
+    firebase.database().ref("chat").on('value', function (snapshot) {
+        $("#chatBox").append("\n[" + snapshot.child("id").val() + "] : " + snapshot.child("text").val());
+    });
+}
+
+function chatSend() {
+    if ($("#emailbox").html() != '') {
+        firebase.database().ref("chat/id").set(user.email);
+        var text = $("#chatInput").val();
+        $("#chatInput").val('');
+        firebase.database().ref("chat/text").set(text);
+    } else {
+        firebase.database().ref("chat/id").set("비로그인");
+        var text = $("#chatInput").val();
+        $("#chatInput").val('');
+        firebase.database().ref("chat/text").set(text);
+    }
+}

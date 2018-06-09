@@ -31,6 +31,7 @@ function Logout_click() {
         // Sign-out successful.
         window.alert("Log out success");
         $("#emailbox").html("");
+        logstate = false;
     }).catch(function (error) {
         // An error happened.
         window.alert("Log out failed");
