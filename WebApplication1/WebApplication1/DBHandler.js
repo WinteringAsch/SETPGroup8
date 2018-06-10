@@ -100,28 +100,10 @@ function chatSend() {
 
 function showPublicProject() {
     var storageRef = firebase.storage().ref();
-    var picture;
-    firebase.database().ref().on('value', function (snapshot) {
-       /* window.alert(snapshot.child("publicProject/1").val());
-        picture = JSON.parse(snapshot.child("publicProject/1").val());
-        $("#publicProject1").html(picture);
-        */
-        var canvas = document.getElementById("publicProject1");
-        var context = canvas.getContext('2d');
-        var imageObj = new Image();
-        imageObj.onload = function () {
-            //context.drawImage(this, 0, 0);
-            context.loadFromJSON(JSON.parse(snapshot.child("publicProject/1").val()));
-        };
-        
-    
-    });
 
-    /*
-    storageRef.child("publicProject/sample1.png").getDownloadURL().then(function (url) {
-        $("#publicProject1").attr('src', url);
+    firebase.database().ref().on('value', function (snapshot) {
+        $("#publicProject1").attr('src', snapshot.child("publicProject/1").val());
     });
-    */
 
     storageRef.child("publicProject/sample2.png").getDownloadURL().then(function (url) {
         $("#publicProject2").attr('src', url);

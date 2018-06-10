@@ -15,20 +15,21 @@ function publicProjectDrawing(num) {
         var storage = firebase.storage().ref();
 
         //storage.child(여기안에 파이어베이스 storage경로를 입력하시면 해당파일 url을 그림에 넣습니다)
-        storage.child('publicProject/sample'+num+'.png').getDownloadURL().then(function (url) {
+       /* storage.child('publicProject/sample'+num+'.png').getDownloadURL().then(function (url) {
             newImage.src = url;
-        });
-        //newImage.src = "https://firebasestorage.googleapis.com/v0/b/coloride1.appspot.com/o/pp1.png?alt=media&token=f130971e-5725-4563-b996-25f4e0974560"; // Modify this part to change file
+        });*/
+
+
+        newImage.src = "images/sample1.png"; // Modify this part to change file
         
         lc.saveShape(LC.createShape('Image', { x: 0, y: 0, image: newImage }));
         var JSONstring;
-        $('.controls.export [data-action=export-as-JSON]').click(function (e) {
+        $('.controls.export [data-action=export-as-PNG]').click(function (e) {
             e.preventDefault();
             JSONstring = JSON.stringify(lc.getSnapshot());
-            firebase.database().ref("publicProject/"+num).set(JSONstring);
-            alert(JSON.stringify(lc.getSnapshot()));
+            firebase.database().ref("publicProject/" + num).set(lc.getImage().toDataURL());
         });
-        $('.controls.export [data-action=import-as-JSON]').click(function (e) {
+        $('.controls.export [data-action=import-as-PNG]').click(function (e) {
             e.preventDefault();
             lc.loadSnapshot(JSON.parse(JSONstring));
         });
