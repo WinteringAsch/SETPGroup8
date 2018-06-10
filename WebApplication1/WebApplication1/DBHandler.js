@@ -104,15 +104,14 @@ function showPublicProject() {
     firebase.database().ref().on('value', function (snapshot) {
         $("#publicProject1").attr('src', snapshot.child("publicProject/1").val());
     });
-
-    storageRef.child("publicProject/sample2.png").getDownloadURL().then(function (url) {
-        $("#publicProject2").attr('src', url);
+    firebase.database().ref().on('value', function (snapshot) {
+        $("#publicProject2").attr('src', snapshot.child("publicProject/2").val());
     });
-    storageRef.child("publicProject/sample3.png").getDownloadURL().then(function (url) {
-        $("#publicProject3").attr('src', url);
+    firebase.database().ref().on('value', function (snapshot) {
+        $("#publicProject3").attr('src', snapshot.child("publicProject/3").val());
     });
-    storageRef.child("publicProject/sample4.png").getDownloadURL().then(function (url) {
-        $("#publicProject4").attr('src', url);
+    firebase.database().ref().on('value', function (snapshot) {
+        $("#publicProject4").attr('src', snapshot.child("publicProject/4").val());
     });
 
 }
