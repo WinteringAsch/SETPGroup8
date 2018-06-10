@@ -97,3 +97,40 @@ function chatSend() {
         firebase.database().ref("chat/text").set(text);
     }
 }
+
+function showPublicProject() {
+    var storageRef = firebase.storage().ref();
+    var picture;
+    firebase.database().ref().on('value', function (snapshot) {
+       /* window.alert(snapshot.child("publicProject/1").val());
+        picture = JSON.parse(snapshot.child("publicProject/1").val());
+        $("#publicProject1").html(picture);
+        */
+        var canvas = document.getElementById("publicProject1");
+        var context = canvas.getContext('2d');
+        var imageObj = new Image();
+        imageObj.onload = function () {
+            //context.drawImage(this, 0, 0);
+            context.loadFromJSON(JSON.parse(snapshot.child("publicProject/1").val()));
+        };
+        
+    
+    });
+
+    /*
+    storageRef.child("publicProject/sample1.png").getDownloadURL().then(function (url) {
+        $("#publicProject1").attr('src', url);
+    });
+    */
+
+    storageRef.child("publicProject/sample2.png").getDownloadURL().then(function (url) {
+        $("#publicProject2").attr('src', url);
+    });
+    storageRef.child("publicProject/sample3.png").getDownloadURL().then(function (url) {
+        $("#publicProject3").attr('src', url);
+    });
+    storageRef.child("publicProject/sample4.png").getDownloadURL().then(function (url) {
+        $("#publicProject4").attr('src', url);
+    });
+
+}

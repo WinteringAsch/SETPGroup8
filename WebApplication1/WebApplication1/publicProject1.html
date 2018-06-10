@@ -14,8 +14,8 @@
     <script src="LC/_js_libs/literallycanvas.js"></script>
     <style type="text/css">
         .fs-container {
-            width: 750px;
-            height: 500px;
+            width: 550px;
+            height: 300px;
             margin: auto;
         }
 
@@ -114,37 +114,14 @@
             Enjoy your color!
             <small>welcome</small>
         </h1>
-        <!-- Portfolio Item Row -->
-        <div class="row">
-            <div class="col">
-                <a href="#">
-                    <canvas class="img-fluid" id="publicProject1"/>
-                </a>
-            </div>
-            <div class="col">
-                <a href="#">
-                    <img class="img-fluid" id="publicProject2" src="http://placehold.it/500x300" alt="">
-                </a>
-            </div>
-            <div class="w-100"></div>
-            <div class="col">
-                <a href="#">
-                    <img class="img-fluid" id="publicProject3" src="http://placehold.it/500x300" alt="">
-                </a>
-            </div>
-            <div class="col">
-                <a href="#">
-                    <img class="img-fluid" id="publicProject4" src="http://placehold.it/500x300" alt="">
-                </a>
-            </div>
-            <!--<div class="fs-container">
-                <div id="lc">
+            <div class="fs-container">
+                <div id="lc-public1">
                 </div>
                 <form class="controls export">
                     <input type="submit" data-action="export-as-JSON" value="Export as JSON">
                     <form class="controls import">
                         <input type="submit" data-action="import-as-JSON" value="Import as JSON">
-            </div>-->
+            </div>
             <div class="row">
                 <h3 class="my-3">Project Description</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae. Sed dui lorem, adipiscing in adipiscing et, interdum nec metus. Mauris ultricies, justo eu convallis placerat, felis enim.</p>
@@ -156,33 +133,6 @@
             </div>
 
         </div>
-    </div>
-    <!-- /.row -->
-    <!-- Related Projects Row -->
-    <h3 class="my-4">Related Projects</h3>
-    <div class="row">
-        <div class="col-md-3 col-sm-6 mb-4">
-            <a href="#">
-                <img class="img-fluid" id="related1" src="http://placehold.it/500x300" alt="">
-            </a>
-        </div>
-        <div class="col-md-3 col-sm-6 mb-4">
-            <a href="#">
-                <img class="img-fluid" id="related2" src="http://placehold.it/500x300" alt="">
-            </a>
-        </div>
-        <div class="col-md-3 col-sm-6 mb-4">
-            <a href="#">
-                <img class="img-fluid" id="related3" src="http://placehold.it/500x300" alt="">
-            </a>
-        </div>
-        <div class="col-md-3 col-sm-6 mb-4">
-            <a href="#">
-                <img class="img-fluid" id="related4" src="http://placehold.it/500x300" alt="">
-            </a>
-        </div>
-    </div>
-    <!-- /.row -->
     </div>
     <!-- /.container -->
     <!-- Footer -->
@@ -200,9 +150,7 @@
     <script src="GoogleLogin.js"></script>
     <script src="DBHandler.js"></script>
     <script src="drawing.js"></script>
-    <!--<script>publicProjectDrawing();</script> -->
-    <script>showRelatedProject();</script>
-    <script>showPublicProject();</script>
+    <script>publicProjectDrawing(1);</script>
     <script>chat();</script>
 </body>
 </html>
