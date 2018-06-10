@@ -2,15 +2,17 @@
 document.write("<script src='DBHandler.js'></script>");
 
 function publicProjectDrawing(num) {
-    
+    var newImage = new Image();
+    newImage.src = "images/sample1.png"; // Modify this part to change file
     $(document).ready(function () {
-        var lc = LC.init(document.getElementById("lc-public"+num), {
+        var lc = LC.init(document.getElementById("lc-public" + num), {
+            backgroundShapes: [LC.createShape('Image', { image: newImage })],
             imageURLPrefix: 'LC/_assets/lc-images',
             toolbarPosition: 'bottom',
             defaultStrokeWidth: 2,
             strokeWidths: [1, 2, 3, 20, 30]
         });
-        var newImage = new Image();
+        
 
         var storage = firebase.storage().ref();
 
@@ -20,9 +22,9 @@ function publicProjectDrawing(num) {
         });*/
 
 
-        newImage.src = "images/sample1.png"; // Modify this part to change file
         
-        lc.saveShape(LC.createShape('Image', { x: 0, y: 0, image: newImage }));
+        
+        //lc.saveShape(LC.createShape('Image', { x: 0, y: 0, image: newImage })); // 그림의 일부로 배경
         var JSONstring;
         $('.controls.export [data-action=export-as-PNG]').click(function (e) {
             e.preventDefault();
