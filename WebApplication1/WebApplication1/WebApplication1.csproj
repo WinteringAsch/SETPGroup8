@@ -71,6 +71,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="admin.html" />
+    <Content Include="CustomRequest.html" />
     <Content Include="drawing.js" />
     <Content Include="Content\admin.css" />
     <Content Include="Content\portfolio-item.css" />
