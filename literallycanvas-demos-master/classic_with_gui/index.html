@@ -28,6 +28,8 @@
             <input type="submit" data-action="export-as-JSON" value="Export as JSON">
             <form class="controls export">
                 <input type="submit" data-action="import-as-JSON" value="Import as JSON">
+                <form class="controls export">
+                    <input type="submit" data-action="export-as-PNG" value="Export as PNG">
 </div>
 
     <!-- you really ought to include react-dom, but for react 0.14 you don't strictly have to. -->
@@ -57,6 +59,11 @@
             $('.controls.export [data-action=import-as-JSON]').click(function (e) {
                 e.preventDefault();
                 lc.loadSnapshot(JSON.parse(s));
+            });
+            $('.controls.export [data-action=export-as-PNG]').click(function (e) {
+                e.preventDefault();
+                //window.open(LC.renderSnapshotToImage(lc.getSnapshot()).toDataURL());
+                winodw.open(lc.getImage().toDataURL());
             });
         });
     </script>
