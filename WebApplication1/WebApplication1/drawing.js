@@ -2,13 +2,12 @@
 document.write("<script src='DBHandler.js'></script>");
 
 function publicProjectDrawing(num) {
-    
     $(document).ready(function () {
         var newImage = new Image();
         firebase.database().ref("publicProject/" + num).on('value', function (snapshot) {
             newImage.src = snapshot.val();      // Modify this part to change file
         });
-        
+
         var lc = LC.init(document.getElementById("lc-public" + num), {
             backgroundShapes: [LC.createShape('Image', { image: newImage })],
             imageURLPrefix: 'LC/_assets/lc-images',
@@ -16,18 +15,9 @@ function publicProjectDrawing(num) {
             defaultStrokeWidth: 2,
             strokeWidths: [1, 2, 3, 20, 30]
         });
-        
 
-        var storage = firebase.storage().ref();
+        //lc.saveShape(LC.createShape('Image', { x: 0, y: 0, image: newImage })); // 그림의 일부로 배경
 
-        //storage.child(여기안에 파이어베이스 storage경로를 입력하시면 해당파일 url을 그림에 넣습니다)
-       /* storage.child('publicProject/sample'+num+'.png').getDownloadURL().then(function (url) {
-            newImage.src = url;
-        });*/
-
-        
-        
-        // lc.saveShape(LC.createShape('Image', { x: 0, y: 0, image: newImage })); // As part of Drawing
         var JSONstring;
         $('.controls.export [data-action=export-as-PNG]').click(function (e) {
             e.preventDefault();
