@@ -5,13 +5,10 @@
  */
 
 body {
-  padding-top: 54px;
+    padding-top: 54px;
+    background-color: #FFDEDB;
 }
 
-#profile{
-    height: 200px;
-    width: 200px;
-}
 
 @media (min-width: 992px) {
   body {
