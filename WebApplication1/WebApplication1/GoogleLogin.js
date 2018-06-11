@@ -14,7 +14,7 @@ function Login_click() {
         InitUserDB(); //유저디비
         // ...
     }).catch(function (error) {
-        window.alert("Login failed");
+        //window.alert("Login failed");
         // Handle Errors here.
         var errorCode = error.code;
         var errorMessage = error.message;
