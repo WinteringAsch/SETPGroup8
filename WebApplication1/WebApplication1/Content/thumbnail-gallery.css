@@ -5,7 +5,8 @@
  */
 
 body {
-  padding-top: 54px;
+    padding-top: 54px;
+    background-color: #FFCE96;
 }
 
 @media (min-width: 992px) {
