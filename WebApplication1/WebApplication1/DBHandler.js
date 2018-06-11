@@ -100,7 +100,6 @@ function chatSend() {
 
 function showPublicProject() {
     var storageRef = firebase.storage().ref();
-
     firebase.database().ref().on('value', function (snapshot) {
         $("#publicProject1").attr('src', snapshot.child("publicProject/1").val());
     });

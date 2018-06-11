@@ -6,6 +6,7 @@ function publicProjectDrawing(num) {
         var ImageSize = { width: 489, height: 369 };
         var ImageBound = { x: 0, y: 0, width: ImageSize.width, height: ImageSize.height };
         var newImage = new Image();
+        
         firebase.database().ref("publicProject/" + num).on('value', function (snapshot) {
             newImage.src = snapshot.val();      // Modify this part to change file
         });
@@ -48,12 +49,15 @@ function privateProjectDrawing(num) {
         var ImageSize = { width: 489, height: 369 };
         var ImageBound = { x: 0, y: 0, width: ImageSize.width, height: ImageSize.height };
         var newImage = new Image();
+
         /*
         firebase.database().ref("publicProject/" + num).on('value', function (snapshot) {
             newImage.src = snapshot.val();      // Modify this part to change file
         });*/
-    
+
         var temp = "images/gallery/gallery" + num + ".png";
+
+
         newImage.src = temp;
 
         var lc = LC.init(document.getElementById("lc-private"), {
@@ -71,7 +75,14 @@ function privateProjectDrawing(num) {
         $('.controls.export [data-action=export-as-PNG]').click(function (e) {
             e.preventDefault();
             JSONstring = JSON.stringify(lc.getSnapshot({ rect: ImageBound }));
-            firebase.database().ref("privateProject/" + num).set(lc.getImage({ rect: ImageBound }).toDataURL());
+            var id = $("#emailbox").html().split('@');
+            if (id[0] == '')
+                window.alert("로그인을 안하시면 저장이 안됩니다");
+            else {
+                window.alert(id[0]);
+                firebase.database().ref("users/"+id[0]+"/"+num).set(lc.getImage({ rect: ImageBound }).toDataURL());
+                window.alert("저장 완료");
+            }
         });
         $('.controls.export [data-action=import-as-PNG]').click(function (e) {
             e.preventDefault();
