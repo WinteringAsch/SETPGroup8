@@ -97,3 +97,21 @@ function chatSend() {
         firebase.database().ref("chat/text").set(text);
     }
 }
+
+function showPublicProject() {
+    var storageRef = firebase.storage().ref();
+
+    firebase.database().ref().on('value', function (snapshot) {
+        $("#publicProject1").attr('src', snapshot.child("publicProject/1").val());
+    });
+    firebase.database().ref().on('value', function (snapshot) {
+        $("#publicProject2").attr('src', snapshot.child("publicProject/2").val());
+    });
+    firebase.database().ref().on('value', function (snapshot) {
+        $("#publicProject3").attr('src', snapshot.child("publicProject/3").val());
+    });
+    firebase.database().ref().on('value', function (snapshot) {
+        $("#publicProject4").attr('src', snapshot.child("publicProject/4").val());
+    });
+
+}

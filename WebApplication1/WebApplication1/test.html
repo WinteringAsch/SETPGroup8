@@ -14,8 +14,8 @@
     <script src="LC/_js_libs/literallycanvas.js"></script>
     <style type="text/css">
         .fs-container {
-            width: 550px;
-            height: 430px;
+            width: 750px;
+            height: 500px;
             margin: auto;
         }
 
@@ -116,36 +116,24 @@
         </h1>
         <!-- Portfolio Item Row -->
         <div class="row">
-            <div class="col">
-                <a href="publicProject1.html">
-                    <img class="img-fluid" id="publicProject1" src="http://placehold.it/500x300" alt="">
-                </a>
-            </div>
-            <div class="col">
-                <a href="publicProject2.html">
-                    <img class="img-fluid" id="publicProject2" src="http://placehold.it/500x300" alt="">
-                </a>
-            </div>
-            <div class="w-100"></div>
-            <div class="col">
-                <a href="publicProject3.html">
-                    <img class="img-fluid" id="publicProject3" src="http://placehold.it/500x300" alt="">
-                </a>
-            </div>
-            <div class="col">
-                <a href="publicProject4.html">
-                    <img class="img-fluid" id="publicProject4" src="http://placehold.it/500x300" alt="">
-                </a>
-            </div>
-            <!--<div class="fs-container">
-                <div id="lc">
+            <div class="col-md-8">
+                <!--
+                <iframe width=750 height=500 name=aa frameborder=0 src=https://skku.club/Simple-Drawing-App-with-Bucket-Tool-master/drawing-app-with-bucket.html></iframe>
+                    -->
+                <!--
+                <img class="img-fluid" src="http://placehold.it/750x500" alt="">
+                    -->
+                <div class="fs-container">
+                    <div id="lc">
+                    </div>
+                    <form class="controls export">
+                        <input type="submit" data-action="export-as-JSON" value="Export as JSON">
+                        <form class="controls import">
+                            <input type="submit" data-action="import-as-JSON" value="Import as JSON">
                 </div>
-                <form class="controls export">
-                    <input type="submit" data-action="export-as-JSON" value="Export as JSON">
-                    <form class="controls import">
-                        <input type="submit" data-action="import-as-JSON" value="Import as JSON">
-            </div>-->
-            <div class="row">
+
+            </div>
+            <div class="col-md-4">
                 <h3 class="my-3">Project Description</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae. Sed dui lorem, adipiscing in adipiscing et, interdum nec metus. Mauris ultricies, justo eu convallis placerat, felis enim.</p>
 
@@ -154,35 +142,33 @@
                 <textarea id="chatBox" readonly style="overflow:scroll" rows="10" cols="50"></textarea>
                 <input id="chatInput" type="text" size="40" /><button type="button" class="btn btn-primary" onclick="chatSend();">전송</button>
             </div>
-
         </div>
-    </div>
-    <!-- /.row -->
-    <!-- Related Projects Row -->
-    <h3 class="my-4">Related Projects</h3>
-    <div class="row">
-        <div class="col-md-3 col-sm-6 mb-4">
-            <a href="#">
-                <img class="img-fluid" id="related1" src="http://placehold.it/500x300" alt="">
-            </a>
+        <!-- /.row -->
+        <!-- Related Projects Row -->
+        <h3 class="my-4">Related Projects</h3>
+        <div class="row">
+            <div class="col-md-3 col-sm-6 mb-4">
+                <a href="#">
+                    <img class="img-fluid" id="related1" src="http://placehold.it/500x300" alt="">
+                </a>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-4">
+                <a href="#">
+                    <img class="img-fluid" id="related2" src="http://placehold.it/500x300" alt="">
+                </a>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-4">
+                <a href="#">
+                    <img class="img-fluid" id="related3" src="http://placehold.it/500x300" alt="">
+                </a>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-4">
+                <a href="#">
+                    <img class="img-fluid" id="related4" src="http://placehold.it/500x300" alt="">
+                </a>
+            </div>
         </div>
-        <div class="col-md-3 col-sm-6 mb-4">
-            <a href="#">
-                <img class="img-fluid" id="related2" src="http://placehold.it/500x300" alt="">
-            </a>
-        </div>
-        <div class="col-md-3 col-sm-6 mb-4">
-            <a href="#">
-                <img class="img-fluid" id="related3" src="http://placehold.it/500x300" alt="">
-            </a>
-        </div>
-        <div class="col-md-3 col-sm-6 mb-4">
-            <a href="#">
-                <img class="img-fluid" id="related4" src="http://placehold.it/500x300" alt="">
-            </a>
-        </div>
-    </div>
-    <!-- /.row -->
+        <!-- /.row -->
     </div>
     <!-- /.container -->
     <!-- Footer -->
@@ -200,9 +186,8 @@
     <script src="GoogleLogin.js"></script>
     <script src="DBHandler.js"></script>
     <script src="drawing.js"></script>
-    <!--<script>publicProjectDrawing();</script> -->
+    <script>testDrawing();</script>
     <script>showRelatedProject();</script>
-    <script>showPublicProject();</script>
     <script>chat();</script>
 </body>
 </html>
