@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Portfolio Item - Start Bootstrap Template</title>
+    <title>Coloride</title>
 
     <!--Firebase -->
     <script src="https://www.gstatic.com/firebasejs/5.0.0/firebase-app.js"></script>
@@ -75,6 +75,7 @@
                             <h2>
                                 <img class="cus-icon" src="Images/drawing.png"> 프로젝트리스트
                                 <input type="button" class="btn navbar-btn ml-2 text-white btn-secondary cus-btn" value="추가" data-toggle="modal" data-target="#addProject" />
+                                <input type="button" onclick="initPublicProject();" class="btn navbar-btn ml-2 text-white btn-secondary cus-btn" value="public project 초기화" data-toggle="modal" data-target="#addProject" />
                             </h2>
                             <div class="cus-div">
                                 <table class="table">
@@ -142,6 +143,10 @@
     <script src="DBHandler.js"></script>
     <script>getUser();</script>
     <script>getProject();</script>
-
+    <script>
+        var id = sessionStorage.getItem('user');
+        if (id != null)
+            $("#emailbox").html(id + " 환영합니다");
+    </script>
 </body>
 </html>

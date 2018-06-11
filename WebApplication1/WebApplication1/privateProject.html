@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Portfolio Item - Start Bootstrap Template</title>
+    <title>Coloride</title>
 
     <!--Literally Canvas-->
     <link href="LC/_assets/literallycanvas.css" rel="stylesheet">
@@ -122,9 +122,9 @@
                             <div id="lc-private">
                             </div>
                             <form class="controls export">
-                                <input type="button" data-action="export-as-PNG" value="Export as PNG">
+                                <input type="button" data-action="export-as-PNG" value="그림 저장">
                                 <form class="controls import">
-                                    <input type="button" data-action="import-as-PNG" value="Import as PNG">
+                                    <input onclick="initGallery(param[1]);" type="button" data-action="import-as-PNG" value="그림 초기화">
                         </div>
                     </div>
                 </div>
@@ -162,5 +162,10 @@
     </script>
     <script>privateProjectDrawing(param[1]);</script>
     <script>chat();</script>
+    <script>
+        var id = sessionStorage.getItem('user');
+        if (id != null)
+            $("#emailbox").html(id + " 환영합니다");
+    </script>
 </body>
 </html>

@@ -85,8 +85,9 @@ function chat() {
 }
 
 function chatSend() {
+    var id = sessionStorage.getItem('user');
     if ($("#emailbox").html() != '') {
-        firebase.database().ref("chat/id").set(user.email);
+        firebase.database().ref("chat/id").set(id);
         var text = $("#chatInput").val();
         $("#chatInput").val('');
         firebase.database().ref("chat/text").set(text);

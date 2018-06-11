@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Portfolio Item - Start Bootstrap Template</title>
+    <title>Coloride</title>
 
     <!--Literally Canvas-->
     <link href="LC/_assets/literallycanvas.css" rel="stylesheet">
@@ -60,7 +60,7 @@
             <a class="navbar-brand" href="index.html">Coloride</a>
 
             <!--테스트용 어드민페이지이동-->
-            <a class="navbar-brand" href="admin.html">&nbsp; &nbsp; </a>
+            <a class="navbar-brand" href="admin.html"> </a>
             <!--테스트용 어드민페이지이동-->
 
 
@@ -251,5 +251,10 @@
     <script>showRelatedProject();</script>
     <script>showPublicProject();</script>
     <script>chat();</script>
+    <script>
+        var id = sessionStorage.getItem('user');
+        if (id != null)
+            $("#emailbox").html(id + " 환영합니다");
+    </script>
 </body>
 </html>

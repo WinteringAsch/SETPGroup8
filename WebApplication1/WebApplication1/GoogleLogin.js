@@ -2,15 +2,15 @@
 
 document.write("<script src='DBHandler.js'></script>");
 
-var user;
 function Login_click() {
     var provider = new firebase.auth.GoogleAuthProvider();
     firebase.auth().signInWithPopup(provider).then(function (result) {
         // This gives you a Google Access Token. You can use it to access the Google API.
         var token = result.credential.accessToken;
         // The signed-in user info.
-        user = result.user;
+        var user = result.user;
         $("#emailbox").html(user.email + " 환영합니다");
+        sessionStorage.setItem('user', user.email);
         InitUserDB(); //유저디비
         // ...
     }).catch(function (error) {
@@ -32,6 +32,7 @@ function Logout_click() {
         window.alert("Log out success");
         $("#emailbox").html("");
         logstate = false;
+        sessionStorage.removeItem('user');
     }).catch(function (error) {
         // An error happened.
         window.alert("Log out failed");
