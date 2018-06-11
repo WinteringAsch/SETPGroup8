@@ -15,8 +15,8 @@ function publicProjectDrawing(num) {
             imageSize: ImageSize,
             imageURLPrefix: 'LC/_assets/lc-images',
             toolbarPosition: 'bottom',
-            defaultStrokeWidth: 2,
-            strokeWidths: [1, 2, 3, 20, 30]
+            defaultStrokeWidth: 3,
+            strokeWidths: [1, 2, 3, 5, 10, 15, 20, 30]
         });
 
         //lc.saveShape(LC.createShape('Image', { x: 0, y: 0, image: newImage })); // 그림의 일부로 배경
