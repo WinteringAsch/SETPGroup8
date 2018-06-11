@@ -91,6 +91,7 @@
     <Content Include="Images\drawing.png" />
     <Content Include="Images\member_icon.jpg" />
     <Content Include="index.html" />
+    <Content Include="privateProject.html" />
     <Content Include="publicProject2.html" />
     <Content Include="publicProject3.html" />
     <Content Include="publicProject1.html" />
