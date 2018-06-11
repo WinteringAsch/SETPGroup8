@@ -7,24 +7,6 @@
     <meta name="author" content="">
     <title>Welcome to Coloride</title>
 
-    <!--Literally Canvas-->
-    <link href="LC/_assets/literallycanvas.css" rel="stylesheet">
-    <script src="LC/_js_libs/react-0.14.3.js"></script>
-    <script src="LC/_js_libs/literallycanvas.js"></script>
-    <style type="text/css">
-        .fs-container {
-            width: 550px;
-            height: 430px;
-            margin: auto;
-        }
-
-        .literally {
-            width: 100%;
-            height: 100%;
-            position: relative;
-        }
-    </style>
-
     <!--Firebase -->
     <script src="https://www.gstatic.com/firebasejs/5.0.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.0.0/firebase-auth.js"></script>
@@ -72,13 +54,13 @@
                         <a class="nav-link" href="#" id="emailbox"></a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="index.html">
                             Home
                             <span class="sr-only">(current)</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
+                        <a class="nav-link" href="about.html">About</a>
                     </li>
                     <li class="nav-item">
                         <!-- <a class="nav-link" href="#" onclick="Services_click();">Services</a>-->
@@ -121,7 +103,7 @@
                 <h2 class="my-4">Our Team</h2>
             </div>
             <div class="col-lg-3 col-sm-6 text-center mb-4">
-                <img class="rounded-circle img-fluid d-block mx-auto" src="http://placehold.it/200x200" alt="" style="width: 200px; height: 200px;">
+                <img class="rounded-circle img-fluid d-block mx-auto" src="images/JunhyeonMoon.png" alt="" style="width: 200px; height: 200px;">
                 <h3>
                     문준현
                     <small>Firebase 담당</small>
@@ -166,11 +148,10 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js" integrity="sha384-u/bQvRA/1bobcXlcEYpsEdFVK/vJs3+T+nXLsBYJthmdBuavHvAW6UsmqO2Gd/F9" crossorigin="anonymous"></script>
     <script src="GoogleLogin.js"></script>
-    <script src="DBHandler.js"></script>
-    <script src="drawing.js"></script>
-    <!--<script>publicProjectDrawing();</script> -->
-    <script>showRelatedProject();</script>
-    <script>showPublicProject();</script>
-    <script>chat();</script>
+    <script>
+        var id = sessionStorage.getItem('user');
+        if (id != null)
+            $("#emailbox").html(id + " 환영합니다");
+    </script>
 </body>
 </html>
