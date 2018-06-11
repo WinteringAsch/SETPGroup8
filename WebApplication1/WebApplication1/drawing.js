@@ -114,4 +114,6 @@ function recommendColor() {
 
 }
 
-
+function customRequestSubmit() {
+    window.alert("Submitted. Thank you for your interest.");
+}
