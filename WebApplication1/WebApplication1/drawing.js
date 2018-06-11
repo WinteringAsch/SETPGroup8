@@ -2,7 +2,6 @@
 document.write("<script src='DBHandler.js'></script>");
 
 function publicProjectDrawing(num) {
-    window.alert(num);
     $(document).ready(function () {
         var ImageSize = { width: 489, height: 369 };
         var ImageBound = { x: 0, y: 0, width: ImageSize.width, height: ImageSize.height };
@@ -11,7 +10,7 @@ function publicProjectDrawing(num) {
             newImage.src = snapshot.val();      // Modify this part to change file
         });
 
-        var lc = LC.init(document.getElementById("lc-public" + num), {
+        var lc = LC.init(document.getElementById("lc-public"), {
             backgroundShapes: [LC.createShape('Image', { x:0, y:0, image: newImage })],
             imageSize: ImageSize,
             imageURLPrefix: 'LC/_assets/lc-images',
