@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="ko">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -13,8 +14,8 @@
     <script src="LC/_js_libs/literallycanvas.js"></script>
     <style type="text/css">
         .fs-container {
-            width: 750px;
-            height: 500px;
+            width: 550px;
+            height: 430px;
             margin: auto;
         }
 
@@ -53,7 +54,6 @@
 </head>
 
 <body>
-
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
@@ -107,42 +107,53 @@
             </div>
         </div>
     </nav>
+    <!-- Page Content -->
+    <div class="container">
+        <!-- Portfolio Item Heading -->
+        <h1 class="my-4">
+            Enjoy your color!
+            <small>welcome</small>
+        </h1>
+            <div class="fs-container">
+                <div id="lc-public1">
+                </div>
+                <form class="controls export">
+                    <input type="button" data-action="export-as-PNG" value="Export as PNG">
+                    <form class="controls import">
+                        <input type="button" data-action="import-as-PNG" value="Import as PNG">
+            </div>
+            <div class="row">
+                <h3 class="my-3">Project Description</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae. Sed dui lorem, adipiscing in adipiscing et, interdum nec metus. Mauris ultricies, justo eu convallis placerat, felis enim.</p>
 
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col">
-                <a href="#">
-                    <img class="img-fluid" id="related1" src="http://placehold.it/500x300" alt="">
-                </a>
+
+                <h3 class="my-3">채팅방</h3>
+                <textarea id="chatBox" readonly style="overflow:scroll" rows="10" cols="50"></textarea>
+                <input id="chatInput" type="text" size="40" /><button type="button" class="btn btn-primary" onclick="chatSend();">전송</button>
             </div>
-            <div class="col">
-                <a href="#">
-                    <img class="img-fluid" id="related1" src="http://placehold.it/500x300" alt="">
-                </a>
-            </div>
-            <div class="w-100"></div>
-            <div class="col">
-                <a href="#">
-                    <img class="img-fluid" id="related1" src="http://placehold.it/500x300" alt="">
-                </a>
-            </div>
-            <div class="col">
-                <a href="#">
-                    <img class="img-fluid" id="related1" src="http://placehold.it/500x300" alt="">
-                </a>
-            </div>
+
         </div>
     </div>
+    <!-- /.container -->
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; Your Website 2018</p>
+        </div>
+        <!-- /.container -->
+    </footer>
 
-        <!-- Bootstrap core JavaScript -->
-        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js" integrity="sha384-u/bQvRA/1bobcXlcEYpsEdFVK/vJs3+T+nXLsBYJthmdBuavHvAW6UsmqO2Gd/F9" crossorigin="anonymous"></script>
-        <script src="GoogleLogin.js"></script>
-        <script src="DBHandler.js"></script>
-        <script src="drawing.js"></script>
-        <script>publicProjectDrawing();</script>
-        <script>showRelatedProject();</script>
-        <script>chat();</script>
 
+    <!-- Bootstrap core JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js" integrity="sha384-u/bQvRA/1bobcXlcEYpsEdFVK/vJs3+T+nXLsBYJthmdBuavHvAW6UsmqO2Gd/F9" crossorigin="anonymous"></script>
+    <script src="GoogleLogin.js"></script>
+    <script src="DBHandler.js"></script>
+    <script src="drawing.js"></script>
+    <script>
+        var param = window.location.search.split('=');
+    </script>
+    <script>publicProjectDrawing(param[1]);</script>
+    <script>chat();</script>
 </body>
 </html>
