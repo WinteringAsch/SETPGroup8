@@ -95,7 +95,7 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
+                        <a class="nav-link" href="CustomRequest.html">Contact</a>
                     </li>
                     <li class="nav-item" id="btnLogin" onclick="Login_click();">
                         <a class="nav-link" href="#">Google Login</a>
@@ -119,77 +119,69 @@
             <div class="col-md-8">
                 <div class="row no-gutters">
                     <div class="col-md-6">
-                        <a href="publicProject1.html">
-                            <img class="img-fluid" id="publicProject1" src="http://placehold.it/500x300" alt="">
+                        <a href="#">
+                            <img class="img-fluid" onclick="publicProjectCllick(1);" id="publicProject1" src="http://placehold.it/500x300" alt="">
                         </a>
                     </div>
                     <div class="col-md-6">
-                        <a href="publicProject2.html">
-                            <img class="img-fluid" id="publicProject2" src="http://placehold.it/500x300" alt="">
+                        <a href="#">
+                            <img class="img-fluid" onclick="publicProjectCllick(2);" id="publicProject2" src="http://placehold.it/500x300" alt="">
                         </a>
                     </div>
                     <div class="w-100"></div>
                     <div class="col-md-6">
-                        <a href="publicProject3.html">
-                            <img class="img-fluid" id="publicProject3" src="http://placehold.it/500x300" alt="">
+                        <a href="#">
+                            <img class="img-fluid" onclick="publicProjectCllick(3);" id="publicProject3" src="http://placehold.it/500x300" alt="">
                         </a>
                     </div>
                     <div class="col-md-6">
-                        <a href="publicProject4.html">
-                            <img class="img-fluid" id="publicProject4" src="http://placehold.it/500x300" alt="">
+                        <a href="#">
+                            <img class="img-fluid" onclick="publicProjectCllick(4);" id="publicProject4" src="http://placehold.it/500x300" alt="">
                         </a>
                     </div>
                 </div>
-                </div>
-                <!--<div class="fs-container">
-                <div id="lc">
-                </div>
-                <form class="controls export">
-                    <input type="submit" data-action="export-as-JSON" value="Export as JSON">
-                    <form class="controls import">
-                        <input type="submit" data-action="import-as-JSON" value="Import as JSON">
-            </div>-->
-                <div class="col-md-4">
-                    <h3 class="my-3">Project Description</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae. Sed dui lorem, adipiscing in adipiscing et, interdum nec metus. Mauris ultricies, justo eu convallis placerat, felis enim.</p>
-                    </div>
-                <div class="col">
-                    <h3 class="my-3">채팅방</h3>
-                    <textarea class="form-control" id="chatBox" readonly style="overflow:scroll" rows="10" cols="50"></textarea>
-                    <div class="input-group">
-                        <input class="form-control" id="chatInput" type="text" size="40" />
-                        <span class="input-group-btn"></span>
-                        <button type="button" class="btn btn-primary" onclick="chatSend();">전송</button>
-                    </div>
+            </div>
+            <div class="col-md-4">
+                <h3 class="my-3">Project Description</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae. Sed dui lorem, adipiscing in adipiscing et, interdum nec metus. Mauris ultricies, justo eu convallis placerat, felis enim.</p>
+            </div>
+            <div class="col">
+                <h3 class="my-3">채팅방</h3>
+                <textarea class="form-control" id="chatBox" readonly style="overflow:scroll" rows="10" cols="50"></textarea>
+                <div class="input-group">
+                    <input class="form-control" id="chatInput" type="text" size="40" />
+                    <span class="input-group-btn"></span>
+                    <button type="button" class="btn btn-primary" onclick="chatSend();">전송</button>
                 </div>
             </div>
-            <!-- /.row -->
-            <!-- Related Projects Row -->
-            <h3 class="my-4">Related Projects</h3>
-            <div class="row">
-                <div class="col-md-3 col-sm-6 mb-4">
-                    <a href="#">
-                        <img class="img-fluid" id="related1" src="http://placehold.it/500x300" alt="">
-                    </a>
-                </div>
-                <div class="col-md-3 col-sm-6 mb-4">
-                    <a href="#">
-                        <img class="img-fluid" id="related2" src="http://placehold.it/500x300" alt="">
-                    </a>
-                </div>
-                <div class="col-md-3 col-sm-6 mb-4">
-                    <a href="#">
-                        <img class="img-fluid" id="related3" src="http://placehold.it/500x300" alt="">
-                    </a>
-                </div>
-                <div class="col-md-3 col-sm-6 mb-4">
-                    <a href="#">
-                        <img class="img-fluid" id="related4" src="http://placehold.it/500x300" alt="">
-                    </a>
-                </div>
-            </div>
-            <!-- /.row -->
         </div>
+        <!-- /.row -->
+        <!-- Related Projects Row -->
+        <h3 class="my-4">Related Projects</h3>
+        <div class="row">
+            <div class="col-md-3 col-sm-6 mb-4">
+                <a href="#">
+                    <img class="img-fluid" id="related1" src="http://placehold.it/500x300" alt="">
+                </a>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-4">
+                <a href="#">
+                    <img class="img-fluid" id="related2" src="http://placehold.it/500x300" alt="">
+                </a>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-4">
+                <a href="#">
+                    <img class="img-fluid" id="related3" src="http://placehold.it/500x300" alt="">
+                </a>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-4">
+                <a href="#">
+                    <img class="img-fluid" id="related4" src="http://placehold.it/500x300" alt="">
+                </a>
+            </div>
+        </div>
+        <!-- /.row -->
+    </div>
     <!-- /.container -->
     <!-- Footer -->
     <footer class="py-5 bg-dark">

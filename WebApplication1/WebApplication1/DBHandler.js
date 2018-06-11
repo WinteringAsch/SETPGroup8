@@ -115,3 +115,19 @@ function showPublicProject() {
     });
 
 }
+
+function showGalleryImages() {
+    $("#gallery1").attr('src', "images/gallery/gallery1.png");
+    $("#gallery2").attr('src', "images/gallery/gallery2.png");
+    $("#gallery3").attr('src', "images/gallery/gallery3.png");
+    $("#gallery4").attr('src', "images/gallery/gallery4.png");
+    $("#gallery5").attr('src', "images/gallery/gallery5.png");
+    $("#gallery6").attr('src', "images/gallery/gallery6.png");
+    $("#gallery7").attr('src', "images/gallery/gallery7.png");
+    $("#gallery8").attr('src', "images/gallery/gallery8.png");
+    $("#gallery9").attr('src', "images/gallery/gallery9.png");
+    $("#gallery10").attr('src', "images/gallery/gallery10.png");
+    $("#gallery11").attr('src', "images/gallery/gallery11.png");
+    $("#gallery12").attr('src', "images/gallery/gallery12.png");
+
+}
