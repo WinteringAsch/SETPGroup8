@@ -114,24 +114,32 @@
             Enjoy your color!
             <small>welcome</small>
         </h1>
-            <div class="fs-container">
-                <div id="lc-public1">
+        <!-- Portfolio Item Row -->
+        <div class="row">
+            <div class="col-md-8">
+                <div class="row no-gutters">
+                    <div class="col-md-6">
+                        <div class="fs-container">
+                            <div id="lc-public">
+                            </div>
+                            <form class="controls export">
+                                <input type="button" data-action="export-as-PNG" value="Save Current State">
+                                <form class="controls import">
+                                    <input type="button" data-action="import-as-PNG" value="Load Saved State">
+                        </div>
+                    </div>
                 </div>
-                <form class="controls export">
-                    <input type="button" data-action="export-as-PNG" value="Save Current State">
-                    <form class="controls import">
-                        <input type="button" data-action="import-as-PNG" value="Load Saved State">
             </div>
-            <div class="row">
-                <h3 class="my-3">Project Description</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae. Sed dui lorem, adipiscing in adipiscing et, interdum nec metus. Mauris ultricies, justo eu convallis placerat, felis enim.</p>
 
-
+            <div class="col">
                 <h3 class="my-3">채팅방</h3>
-                <textarea id="chatBox" readonly style="overflow:scroll" rows="10" cols="50"></textarea>
-                <input id="chatInput" type="text" size="40" /><button type="button" class="btn btn-primary" onclick="chatSend();">전송</button>
+                <textarea class="form-control" id="chatBox" readonly style="overflow:scroll" rows="10" cols="50"></textarea>
+                <div class="input-group">
+                    <input class="form-control" id="chatInput" type="text" size="40" />
+                    <span class="input-group-btn"></span>
+                    <button type="button" class="btn btn-primary" onclick="chatSend();">전송</button>
+                </div>
             </div>
-
         </div>
     </div>
     <!-- /.container -->
