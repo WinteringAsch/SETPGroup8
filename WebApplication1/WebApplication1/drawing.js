@@ -55,10 +55,21 @@ function privateProjectDrawing(num) {
             newImage.src = snapshot.val();      // Modify this part to change file
         });*/
 
-        var temp = "images/gallery/gallery" + num + ".png";
-
-
-        newImage.src = temp;
+        var id = $("#emailbox").html().split('@');
+        if (id[0] != '') {
+            firebase.database().ref("users/" + id[0]).once('value', function (snapshot) {
+                if (snapshot.hasChild(num)) {
+                    var temp = snapshot.child(num).val();
+                    newImage.src = temp;
+                } else {
+                    var temp = "images/gallery/gallery" + num + ".png";
+                    newImage.src = temp;
+                }
+            });
+        } else {
+            var temp = "images/gallery/gallery" + num + ".png";
+            newImage.src = temp;
+        }
 
         var lc = LC.init(document.getElementById("lc-private"), {
             backgroundShapes: [LC.createShape('Image', { x: 0, y: 0, image: newImage })],
@@ -79,7 +90,6 @@ function privateProjectDrawing(num) {
             if (id[0] == '')
                 window.alert("로그인을 안하시면 저장이 안됩니다");
             else {
-                window.alert(id[0]);
                 firebase.database().ref("users/"+id[0]+"/"+num).set(lc.getImage({ rect: ImageBound }).toDataURL());
                 window.alert("저장 완료");
             }
@@ -89,6 +99,19 @@ function privateProjectDrawing(num) {
             lc.loadSnapshot(JSON.parse(JSONstring));
         });
     });
+}
+
+function recommendColor() {
+    if ($('#inlineRadio1:checked').val()) {
+        window.alert("초록색이 좋겠군요!");
+    } else if ($('#inlineRadio2:checked').val()) {
+        window.alert("파란색이 좋겠군요!");
+    } else if ($('#inlineRadio3:checked').val()) {
+        window.alert("분홍색이 좋겠군요!");
+    } else if ($('#inlineRadio4:checked').val()) {
+        window.alert("빨강색이 좋겠군요!");
+    }
+
 }
 
 
