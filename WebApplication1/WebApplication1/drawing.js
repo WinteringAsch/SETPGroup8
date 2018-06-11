@@ -3,13 +3,16 @@ document.write("<script src='DBHandler.js'></script>");
 
 function publicProjectDrawing(num) {
     $(document).ready(function () {
+        var ImageSize = { width: 489, height: 369 };
+        var ImageBound = { x: 0, y: 0, width: ImageSize.width, height: ImageSize.height };
         var newImage = new Image();
         firebase.database().ref("publicProject/" + num).on('value', function (snapshot) {
             newImage.src = snapshot.val();      // Modify this part to change file
         });
 
         var lc = LC.init(document.getElementById("lc-public" + num), {
-            backgroundShapes: [LC.createShape('Image', { image: newImage })],
+            backgroundShapes: [LC.createShape('Image', { x:0, y:0, image: newImage })],
+            imageSize: ImageSize,
             imageURLPrefix: 'LC/_assets/lc-images',
             toolbarPosition: 'bottom',
             defaultStrokeWidth: 2,
@@ -21,8 +24,8 @@ function publicProjectDrawing(num) {
         var JSONstring;
         $('.controls.export [data-action=export-as-PNG]').click(function (e) {
             e.preventDefault();
-            JSONstring = JSON.stringify(lc.getSnapshot());
-            firebase.database().ref("publicProject/" + num).set(lc.getImage().toDataURL());
+            JSONstring = JSON.stringify(lc.getSnapshot({ rect: ImageBound }));
+            firebase.database().ref("publicProject/" + num).set(lc.getImage({ rect: ImageBound }).toDataURL());
         });
         $('.controls.export [data-action=import-as-PNG]').click(function (e) {
             e.preventDefault();
