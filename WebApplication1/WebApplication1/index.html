@@ -145,8 +145,54 @@
                 <p>
                     <b>Rose - </b>Long a symbol of love and passion, the ancient Greeks and Romans associated roses with Aphrodite and Venus, goddesses of love. Used for hundreds of years to convey messages without words, they also represent confidentiality.
                     <br>Each color offers a distinct meaning: red, the lover's rose, signifies enduring passion; white, humility and innocence; yellow, expressing friendship and joy; pink, gratitude, appreciation and admiration; orange, enthusiasm and desire; white lilac and purple roses represent enchantment and love at first sight.
-                    <br>Color your own unique rose, and share it with others. 
+                    <br>Color your own unique rose, and share it with others.
                 </p>
+                <!-- Trigger the modal with a button -->
+                <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">How do you feel?</button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="myModal" role="dialog">
+                    <div class="modal-dialog">
+
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Choose your mood</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="radio-inline col-md-3">
+                                    <label class="radio-inline">
+                                        <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> Happy
+                                    </label>
+                                </div>
+                                <div class="radio-inline col-md-3">
+                                    <label class="radio-inline">
+                                        <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> Upset
+                                    </label>
+                                </div>
+                                <div class="radio-inline col-md-3">
+                                    <label class="radio-inline">
+                                        <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"> Love
+                                    </label>
+                                </div>
+                                <div class="radio-inline col-md-3">
+                                    <label class="radio-inline">
+                                        <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"> Enjoy
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary">Save changes</button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
             </div>
             <div class="col">
                 <h3 class="my-3">채팅방</h3>
