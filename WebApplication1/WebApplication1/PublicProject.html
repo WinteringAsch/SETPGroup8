@@ -115,9 +115,7 @@
         </h1>
         <!-- Portfolio Item Row -->
         <div class="row">
-            <div class="col-md-8">
-                <div class="row no-gutters">
-                    <!--<div class="col-md-6">   채팅창과 그림판이 겹치는 문제-->
+            <div class="col">
                     <div class="fs-container">
                         <div id="lc-public">
                         </div>
@@ -125,11 +123,9 @@
                             <input type="button" data-action="export-as-PNG" value="Save Current State">
                             <form class="controls import">
                                 <input type="button" onclick="initPublicProject(param[1]);" data-action="import-as-PNG" value="그림 초기화">
-                    </div>
-                    <!--</div>-->
                 </div>
             </div>
-
+            <div class="w-100"></div>
             <div class="col">
                 <h3 class="my-3">채팅방</h3>
                 <textarea class="form-control" id="chatBox" readonly style="overflow:scroll" rows="10" cols="50"></textarea>
