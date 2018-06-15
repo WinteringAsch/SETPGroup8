@@ -5,7 +5,7 @@ function InitUserDB() {
     email = user.email;
     var id = email.split('@');
     
-    firebase.database().ref('/users/' + id[0]).once('value', function (snapshot) {
+    firebase.database().ref('/users/' + id[0]).once('value', function (snapshot) { //디비에서 이미 로그인한 정보가 있는지 확인하고 처음 로그인하는 유저에 대해 디비에 초기값을 넣어줌
         if (snapshot.val() == null) {
             firebase.database().ref('/users/' + id[0]).set({
                 userID: user.email
@@ -17,7 +17,7 @@ function InitUserDB() {
 function getUser() {
     $("#userList").html("");
    
-    firebase.database().ref('/users/').once('value', function (snapshot) {
+    firebase.database().ref('/users/').once('value', function (snapshot) { //
         var num = 1;
         snapshot.forEach(function (childSnapshot) {
             var name = childSnapshot.key;
@@ -67,7 +67,7 @@ function projectAdd() {
 //Related projet이미지를 보여주는 함수
 function showRelatedProject() {
     var storageRef = firebase.storage().ref();
-    storageRef.child("pp1.png").getDownloadURL().then(function (url) {
+    storageRef.child("pp1.png").getDownloadURL().then(function (url) {  //각각 디비에 저장되어있는 값을 불러서 이미지출력
         $("#related1").attr('src', url);
     });
     storageRef.child("pp2.png").getDownloadURL().then(function (url) {
