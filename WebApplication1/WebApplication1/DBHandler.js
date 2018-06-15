@@ -1,5 +1,6 @@
 ﻿//DB를 컨트롤하는 함수들을 모아놓을 예정입니다
 
+//만약 유저가 처음 로그인을 한 것이라면 디비에 넣어준다
 function InitUserDB() {
     email = user.email;
     var id = email.split('@');
@@ -12,7 +13,7 @@ function InitUserDB() {
         }
     });
 }
-
+//admimpage의 유저리스트를 출력하는 함수
 function getUser() {
     $("#userList").html("");
    
@@ -28,6 +29,7 @@ function getUser() {
     });
 }
 
+//adminpage의 프로젝트리스트를 출력하는 함수
 function getProject() {
     $("#projectList").html("");
 
@@ -45,7 +47,7 @@ function getProject() {
     });
 
 }
-
+//adiminpage의 프로젝트추가버튼을 눌렀을 때 디비에 추가시키는 함수
 function projectAdd() {
     var projectTitle = $("#projectAdd_title").val();
     var project_start_date = $("#projectAdd_start_date").val();
@@ -62,6 +64,7 @@ function projectAdd() {
     window.alert("추가가 완료되었습니다");
 }
 
+//Related projet이미지를 보여주는 함수
 function showRelatedProject() {
     var storageRef = firebase.storage().ref();
     storageRef.child("pp1.png").getDownloadURL().then(function (url) {
@@ -78,12 +81,14 @@ function showRelatedProject() {
     });
 }
 
+//채팅창에 채팅텍스트 출력하는 함수
 function chat() {
     firebase.database().ref("chat").on('value', function (snapshot) {
         $("#chatBox").append("\n[" + snapshot.child("id").val() + "] : " + snapshot.child("text").val());
     });
 }
 
+//채팅메시지를 디비에 보내는 함수
 function chatSend() {
     var id = sessionStorage.getItem('user');
     if ($("#emailbox").html() != '') {
@@ -99,6 +104,7 @@ function chatSend() {
     }
 }
 
+//public project의 이미지를 보여주는 함수
 function showPublicProject() {
     var storageRef = firebase.storage().ref();
     firebase.database().ref().on('value', function (snapshot) {
@@ -116,6 +122,7 @@ function showPublicProject() {
 
 }
 
+//혼자그리기를 들어갔을 때 그림을 보여주는 함수
 function showGalleryImages() {
     $("#gallery1").attr('src', "images/gallery/gallery1.png");
     $("#gallery2").attr('src', "images/gallery/gallery2.png");

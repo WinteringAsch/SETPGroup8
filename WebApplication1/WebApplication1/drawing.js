@@ -1,6 +1,7 @@
 ﻿////////드로잉함수
 document.write("<script src='DBHandler.js'></script>");
 
+
 function publicProjectDrawing(num) {
     $(document).ready(function () {
         var ImageSize = { width: 489, height: 369 };
